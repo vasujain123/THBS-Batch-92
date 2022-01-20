@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+
+
+
+    <script>
+
+
+
+        function drawGrid() {
+
+
+
+            const canvas = document.getElementById("myCanvas");
+
+            var context = canvas.getContext('2d');
+
+            let x = 100;
+
+            let y = 100;
+
+            let radius = 100;
+
+            //Draw a circle
+
+            context.arc(x, y, radius, 0, Math.PI * 2, true);
+
+            //arc(x, y, radius, startAngle, endAngle, counterclockwise)
+
+
+            let width = 400;
+
+            let height = 400;
+
+            let GAP = 100;
+
+            context.strokeRect(x, y, width, height);
+
+            //Horizontal Lines
+
+            for (let i = 1; i < 4; i++) {
+
+                y = y + GAP;
+
+                context.moveTo(x, y);
+
+                context.lineTo(x + width, y);
+
+            }
+
+            context.stroke();
+
+            //Verticle Line Lines
+
+            y = 100;
+
+            for (let i = 1; i < 4; i++) {
+
+                x = x + GAP;
+
+                context.moveTo(x, y);
+
+                context.lineTo(x, y + height);
+
+            }
+
+            context.stroke();
+        }
+        drawGrid();
+    </script>
+</body>
+
+</html>

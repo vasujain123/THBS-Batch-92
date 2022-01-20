@@ -1,0 +1,1582 @@
+
+================================================= 06/12/2021 ==================================================
+Java:
+
+IDE -> Integrated Development Environment -> Compiler + Runtime(JVM)+ lib + HELP
+JDK -> Java Development Kit (Compiler + JVM) -> Developer
+JRE -> Java Runtime Environment (JVM) -> Client
+
+
+What is Java?
+--------------
+1. Java is a programming language.
+2. Java is a platform
+3. Java Is Technology
+	a. JavaSE (Standard Edition) -> Standalone app/ Desktop application
+	b. JavaEE (Enterprise Edition) -> Web Application 
+	c. JavaME (Micro Edition) -> Mobile devices
+---------------------------------------------------------------------------------------------------	
+Why Java?
+-------------
+1. OOP language
+-----------------------
+2. Platform Independent
+3. secure
+4. Robust
+5. Internalization(I18N) support
+
+
+
+
+Data Types In java:
+---------------------------
+Primitive Data Types:
+----------------------
+boolean
+
+char
+
+byte
+short
+int
+long
+
+float
+double
+
+Reference Data Types:
+----------------------
+Class
+Interface
+array
+enum
+annotation
+==================================================================
+C/C++ uses ASCII-8 bits encoding scheme. 2 power 6 => 256
+
+Java uses Unicode -16 Bits encoding scheme -> 2 power 16 -> ----------
+
+-------------------------------------------------------------------------------
+Class
+Object
+Inheritance
+Polymorphism
+Encapsulation
+Data Absraction
+
+-----------------------------------------------------------
+Class:
+-------
+1. Class is an imaginary thing (or blueprint) which describe the properties(variable) 
+	and behaviours(functions) of the real world objects
+2. Class is representation of similar kind of objects.
+3. Class is an user defined data type.
+
+Syntax for creating a class in Java?
+----------------------------------------
+
+<modifier> class <name> <extends> <implements>
+	{
+		//body of class
+	}
+
+e.g.:
+--------
+ class Animal
+	{
+		// members
+			a. static
+			b. instance
+	}
+
+member:
+------------
+1. variable(s)
+2. method(s)
+3. constructor(s)
+4. initializer block(s)
+5. inner class(es)
+
+public class Car
+{
+	int h;
+	int w;
+static	float wc;
+	
+	void move(){}	
+static	void avg(){}
+
+}
+
+==========================================================================
+static members are associated with class or classname.
+
+instance members are associated with Objects.
+
+---------------------------------------------------------------------
+
+variable-> name of memory location
+
+
+== =============================================================
+How to create object for a Car class:
+========================================
+
+1. Object is a real world enity
+2. Object is an instance of a class.
+
+
+
+
+Syntax:
+-----------
+				<type>	<var> =	new <type>(<parameter)
+				
+Example:
+------------
+		Car c1 = new Car();
+		Car c2 = new Car();
+		
+Accessing members:
+------------------------
+1. <ClassName>.<member>  // Only static members
+2. <ObjRef>.<member> //  instance as well as static members
+3. <member>
+==========================================
+
+	Car.wc = 50; //OK
+	
+	c2.w = 20; //OK
+	c1.h = 15; //OK
+	
+---------------------------------
+
+		Car.h = 99; // trying to access inastance member using class name.-> Compile Time error
+		
+		c1.wc = 100; //trying to access static member using Obj Ref. -> OK but not recommended.
+		
+The main method:
+-----------------------
+
+	public static void main(String[] shad) 
+		{
+		
+		}	
+		
+1. Called By JVM, which is an external entity hence declred public.
+2. declared as static so JVM can call it directly with the class name. 
+	otherwise JVM will hce to create an object for that class which is an unnecessary task.
+3. main method will not return any value to is caller i.e. JVM.
+4. main is just a method name nothing else.
+
+public class Test1 {
+
+	void m1() {
+	}
+
+	static void m2() {
+	}
+
+	void m3() {
+
+		Test1.m2(); // using class name
+
+		Test1 obj = new Test1();
+		obj.m1(); // using object reference
+
+	}
+}
+
+
+--------------------------------------------------------
+Conditional statements:
+=================================
+1. 	if(<BoolExpr>)
+		{
+			//body
+		}
+
+2. if(<BoolExpr>)
+		{
+			//body
+		}
+	else
+		{
+			// Body
+		}
+		
+3. if(<BoolExpr>)
+		{
+			//body
+		}
+	else if(<BoolExpr>)
+		{
+			//body
+		}
+	else
+		{
+			// Body
+		}		
+		
+====================================================================
+
+ int a =10;
+ 
+ if(a = 15)
+	{
+	SOP("Hi");
+	}
+  else
+	{
+	SOP("Bye");
+	}
+=======================
+Output:-> COmpile Time error
+---------------------------------
+ int a =10;
+ 
+ if(a == 15)
+	{
+	SOP("Hi");
+	}
+  else
+	{
+	SOP("Bye");
+	}
+
+Output:-> Bye
+==============================================================================================================================
+													07/12/2021
+==============================================================================================================================
+
+Printing in Java:
+------------------
+System.out.print(data); -> data
+
+ 
+
+System.out.println(data); -> data + \n (new line)
+
+ 
+
+Example:
+-------------
+  int i =10;
+  
+SOP(i); // 10 -> value of variable
+SOP('i'); // i -> i is a char value
+SOP("i"); // i -> i is a string value
+SOP(10); // 10 -> 10 as  an int value
+SOP("10"); // 10 -> 10 as a string value
+SOP(2 * 5); // 10 -> 10 is evaluated value.
+
+ 
+
+--------------------------------------------------------------------
+ class A
+ {
+    ------
+    -----
+    static B v2;
+    ----
+    ------
+ }
+-------------------------
+ class B
+    {
+        void foo(){}
+    }
+--------------------------
+B v1 = new B();
+v1.foo();
+------------------
+ A.v2.foo();
+System.out.println();
+=====================================================================
+Operators:
+--------------
+1. Arithmetice Operators
+2. Reltional Operators
+3. Eqaulity operators
+4. String Concatenation
+5. Variable increment/decrement
+6. Logical
+7. Ternary.
+======================================================
+1. Arithmetice Operators
+    +, -, *, /, %
+
+ 
+
+example:
+----------
+    int a = 10;
+    int b = 3;
+    
+    int c = a + b ; // 13 
+    int d = a - b ; // 7
+    int e = a * b ; // 30
+    int f = a / b ; // 3
+    int g = a % b ; // 1
+
+ 
+
+Extended Assignment operators:
+===================================
+ a = a + b ; ==> a += b;
+ a = a - b ; ==> a -= b;
+ a = a * b ; ==> a *= b;
+ a = a / b ; ==> a /= b;
+ a = a % b ; ==> a %= b;
+
+ 
+
+-------------------------------------
+Emample:
+------------------
+
+ 
+
+byte -> short -> int -> long -> float -> double
+
+ 
+
+    int i =10;
+    float f = 2.3F;
+    double d = 10.0;
+    
+double    x = (i + f) * d;  // MAX(int, int, float, double )
+ 
+--------------------------------
+
+ 
+
+    byte b = 10;
+    short s= 15;
+    
+int    y = b + s; //// MAX(int, byte, short )
+
+ 
+
+----------------------------------------------------------------------
+2. Relational Operators
+    <, >, <=, >=
+
+ 
+
+operands: numeric values
+result : boolean
+
+ 
+
+Example:
+-----------
+    int x =15;
+    
+    boolean b = 10 < x < 20 ; //  true < 20 => C.E.
+
+ 
+
+
+3. Eqaulity operators
+    ==, !=
+    
+operands: all type
+result : boolean
+
+ 
+
+    int i =10;
+    boolean b1 = i == 15; //false
+            b1 = b1 == false;  // true
+
+ 
+
+
+Car c1 = new Car();
+Car c2 = new Car();
+
+ 
+
+    boolean b2 = c1 == c2; //  false
+    
+=========================================================================
+4. String Concatenation ('+')
+----------------------------------------
+    String s ="I love ";
+    String s2 = "JAVA";
+    
+    String s3 = s1 + s2; // "I love JAVA"
+    
+String    x = "20" + 10; // ==> "20" + "10" ==> "2010"
+
+ 
+
+=================================================================
+5. Variable increment/decrement
+-------------------------------------
+
+ 
+
+    ++ /--
+    
+    pre/post
+
+ 
+
+                int x =10;
+     int y = ++x;// 11   | int y = x++; // 10
+    
+------------------------------------
+    int i = ++5; // C.E.
+    SOP(i); // ---
+
+ 
+
+======================================================================
+
+ 
+
+6. Logical operator:
+--------------------------
+ &, |, ^, !
+
+ 
+
+A & B = A.B
+A | B = A + B
+
+ 
+
+        -        -
+A ^ B = A.B + A.B  => if both are same -> false otherwise true
+
+ 
+
+operands: boolean expr
+result : boolean
+
+ 
+
+Example:
+--------------
+    int x =15;
+    
+    boolean b = (10 > x) & (x < 20) ; // false & true => false
+
+ 
+
+========================================================================
+    boolean b = (10 > x) && (x < 20) ; //false && (Not evaluated) => false
+
+ 
+
+  x = sqrt(Sin-1(log(57385 * 5753))) * 0 // 0
+-------------------------------------------
+7. Ternary.
+
+ 
+
+  <boolExpr> ? <expr1> : <expr2>
+  
+Exmple:
+------------
+int a = ------;
+int b = ------;
+int c = ------;
+
+ 
+
+int max;
+    
+    if(a>b)
+    {
+        max = a;
+    }
+    else{
+     max = b;
+    }
+
+ 
+
+SOP(max);
+
+ 
+
+-----------------------------------------------
+
+ 
+
+int a = ------;
+int b = ------;
+
+ 
+
+int max = a > b ? a : b;
+SOP(max);
+
+ 
+
+-------------------------------------------
+Array:
+-----------
+-> Array is a linear Data Structure.
+-> Arrays stores similar kind of data/elements
+-> In java arrays are Objects
+-> Array are fixed in size.
+-> Array are indexed and index starting from 0.
+-> In Java, array have an elemnet named length which contain size of an array.
+-> If we will use an invalid index we will get an exception(java.lang.ArrayIndexOutOfBoundsException)
+
+ 
+
+Syntax:
+-------------
+    <type>[] <var> = new <type>[ <size> ];
+    <type>[] <var> = {<values>};
+
+ 
+
+Example:
+----------
+        int[] arr = new int[3];
+
+ 
+
+        arr[0] = 99;
+        arr[1] = 45;
+        arr[2] = 78;
+
+ 
+
+        int[] arr2 = { 3, 13, 23 , 78, 45, 39};
+
+ 
+
+    
+    String[] names= new String[5];
+
+ 
+
+---------------------------------------
+
+ 
+
+function/method:
+-----------------
+syntax :
+--------------
+<modifier> <returnType> <name>(<parameters>) <throws>
+{
+    //body
+}
+
+ 
+
+Example:
+------------
+ void foo()
+    {
+    }
+
+ 
+
+=====================================
+Method overloding:
+----------------------
+
+ 
+
+In a java class we dont have duplicate methods( same name and same parameters).
+
+ 
+
+But in a java class we have 2 or more than 2 methods having same name but different parameter list.
+    this process is called method overloadinga nd mehods called overloaded methods
+    
+If name are same, then it should be different:
+    1. number of parameters
+    2. data type
+    3. order of parameter
+
+ 
+
+-> There is no impact of return type in method overloading
+
+ 
+
+------------------------------------------------------------------------
+Constructor:
+--------------
+-> Constructors are special members of a class. they are similar to the methods.
+
+ 
+
+-> it is used to construct initial state of an object.
+
+ 
+
+-> Rules for creating constructor:
+    Name of constructor must be same as name of its class
+    only access modifier is permissible
+    no return type even void
+
+ 
+
+
+-> Every Java class must have atleast one constructor.
+-> If developer not created a constructor,
+    compiler will insert a default constructor with same accessbility of that class
+
+==============================================================================================================================
+														08/12/2021
+==============================================================================================================================
+
+
+------------------------------------------------------------------------------------------------
+SINGLETON Pattern
+--------------------------------------------------------------------------------
+Access modifier:
+------------------
+private -> default -> protected -> public
+
+
+public
+protected
+default
+private 
+
+
+---------------------------------------------------------------------
+
+
+public: it can be accessible from anywhere.
+
+
+protected: Within its package, it can be outside through inheritance
+deafult: Only Within its package.
+
+
+private: Only within its class. (Reflection API)
+
+
+-------------------------------------------------------------
+Other Modifier:
+--------------------
+static
+final
+abstract
+native
+transient
+synchronized
+volatile
+strictfp
+
+
+-------------------------------------------------------------------------------
+final keyword:(used with class, method and variables (local variable too))
+---------------------------------------------------------------------------
+We can use final with member as wel as local variables.
+
+
+final variable: (final + variable = constant)
+--------------------
+Cannot reassign the variable.
+
+
+
+final class: 
+--------------------
+No class can inherit final class.
+
+
+final method: 
+--------------------
+final method cannot be overridden
+
+
+===========================================================================
+abstract keyword:(used with class and method)
+---------------------------------------------
+abstract method: method without body
+-------------------
+
+
+public class A {​​​​​​​​
+
+
+    //concrete method
+    void m1() {​​​​​​​​
+    }​​​​​​​​
+
+
+   //abstract method
+    abstract void m2();
+
+
+}​​​​​​​​
+-----------------------------------
+abstract class: restrict its intanciation. (We cannot create object of abstract class)
+------------------
+Marzi:
+=========
+
+
+ abstract public class B {​​​​​​​​
+        void foo()
+        {​​​​​​​​}​​​​​​​​
+    }​​​​​​​​
+
+
+---------------------------------------
+Majboori:
+============
+
+
+abstract public class B {​​​​​​​​
+ 
+        void m1(){​​​​​​​​}​​​​​​​​
+        abstract void foo();
+        
+    }​​​​​​​​
+
+
+------------------------------------------------------------------
+ public class Animal    
+    {​​​​​​​​
+         void eat(){​​​​​​​​
+            sop("Animal is eating");
+         }​​​​​​​​
+    }​​​​​​​​
+---------------------------------------------
+public class Lion extends Animal 
+{​​​​​​​​
+       
+
+
+}​​​​​​​​
+-----------------------------------
+public class Cow extends Animal  
+{​​​​​​​​
+        
+
+
+}​​​​​​​​
+--------------------------------------
+public class Crow extends Animal  
+{​​​​​​​​
+        
+}​​​​​​​​
+------------------------------------------------------
+
+
+native
+====================
+public class A
+{​​​​​​​​
+
+
+    abstract void m1(); // OK -> sub classes.
+
+
+    native   void m2(); // OK -> another programming lnguage code C/C++/Python....
+
+
+}​​​​​​​​
+========================================================
+transient: transient varaibles are not saved during serialization
+-------------------------------------------------------------------
+
+
+class Employee{​​​​​​​​
+
+
+int id;
+String name;
+int age;
+traisient double salary;
+
+
+
+}​​​​​​​​
+------------------------------------------------------------------
+synchronized: (used with method and block)
+---------------: 
+
+
+synchronized void bathRoom(){​​​​​​​​
+    //bathing
+    //washing
+}​​​​​​​​
+=============================================================
+voltile: is used with variable
+---------------------------------
+
+
+volatile int i =10; 
+
+
+JVM will not cache i.
+
+
+thread-1 -> no copy of i ->  i=15 
+thread-2 -> no copy of i -> i=20
+
+
+===========================================================================
+Inheritance:(IS-A)
+--------------------
+It is a way of Code reusability.
+
+
+------------------------------------------------
+    Person
+      ^
+      |
+      |  IS-A
+      |
+    Employee
+---------------------------------------
+
+
+public class Person
+{​​​​​​​​
+     void eat(){​​​​​​​​}​​​​​​​​
+     void sleep(){​​​​​​​​}​​​​​​​​
+}​​​​​​​​
+
+
+public class Employee extends Person
+{​​​​​​​​
+    void doWork(){​​​​​​​​}​​​​​​​​
+}​​​​​​​​
+--------------------------------------------------------------
+sub/child/drived class  -> super/parent/base class
+
+
+class Dog {​​​​​​​​
+}​​​​​​​​
+
+
+public class Employee
+{​​​​​​​​ 
+    Dog dog; //HAS-A (aggregation)
+    
+    void doWork(){​​​​​​​​}​​​​​​​​
+}​​​​​​​​
+
+
+------------------------------------
+types of Inheritance:
+--------------------------
+1. Single
+2. Multiple
+
+
+==========================
+3. Multi-level
+4. hybrid
+5. hierarchical
+
+
+
+example:
+----------
+
+
+1. B -> A  (B inherits A)
+
+
+
+2. C -> B and C -> A (C have 2 parent classes)
+
+
+3. C -> B -> A
+
+
+4. xyz
+5. Xyz
+
+
+---------------------------------------------------------------------
+Java supports single inheritance using classes.
+---------------------------------------------------------
+====================================================================================================
+											09/12/2021
+====================================================================================================
+
+Method Overloading | Compile time polymorphism | static polymorphism | early polymorphism 
+======================
+class Abc
+{
+    void greet(){
+        SOP("Hello Guest");
+    }
+    void greet(String name){
+        SOP("Hello "+ name);
+    }
+}
+
+ 
+
+
+Method Overriding | run time polymorphism | dynamic polymorphism | late polymorphism 
+
+ 
+
+class Parent
+    {
+        void sayHello(){
+            SOP("Namaste....");
+        }
+    }
+
+ 
+
+class Child extends Parent
+    {
+        void sayHello(){
+            SOP("Hi dudy...");
+        }
+    }
+====================================================
+Child obj = new Child();
+    obj.sayHello();// Hi dudy...
+
+ 
+
+=======================================================================
+Rules from method overriding: (private and static method dosent take participation in Method overriding)
+----------------------------------------------------------------------------------------------------------
+1. Method name and parameter must be same.
+2. For accessbility, it can be widen. (private -> default -> protected -> public)
+3. Return type:
+    if primitive -> leave as it is.
+    if Reference -> same or it can be a sub class. (Co-Variant type)
+
+ 
+
+4. In throws , narrowing will be happen.
+
+ 
+
+==========================================================================================
+
+ 
+
+Object:
+--------------
+int hashCode()
+String toString()
+boolean equals(Object)
+Object clone() throws CloneNotSupportedException
+Class getClass()
+void finalize()
+=============================================================
+int hashCode():
+----------------------
+-> JVM will assign an unique ID to every object. This id is called hash code.
+-> this method is used in Collection Framework
+
+ 
+
+Car c1= new Car();
+int h1= c1.hashCode();
+
+ 
+
+Car c1= new Car();
+int h2= c2.hashCode();
+
+ 
+
+SOP(h1 == h2); //
+---------------------------------------------------------------------
+String toString(): its returns String representation of custom objects.
+---------------------------------------------------------------------------
+boolean equals(Object):
+----------------------------
+        Employee e1 = new Employee();
+        e1.setAge(35);
+        e1.setName("Shad");
+        e1.setSalary(1234);
+
+ 
+
+        Employee e2 = new Employee();
+        e2.setAge(36);
+        e2.setName("Shad");
+        e2.setSalary(1234);
+
+ 
+
+        boolean b1 = e1 == e2; // Reference equality
+        System.out.println(b1);
+
+ 
+
+        boolean b2 = e1.equals(e2); // Object equality
+        System.out.println(b2);
+------------------------------------------------------------------------
+protected native Object clone() throws CloneNotSupportedException :
+-------------------------------------------------------------------------
+deep cloning
+*)shallow cloning
+-----------------------------------------------------
+package p1;
+
+ 
+
+public class Employee implements Cloneable{
+
+ 
+
+    private String name;
+    private int age;
+    private float salary;
+
+ 
+
+    public String getName() {
+        return name;
+    }
+
+ 
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+ 
+
+    public int getAge() {
+        return age;
+    }
+
+ 
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+ 
+
+    public float getSalary() {
+        return salary;
+    }
+
+ 
+
+    public void setSalary(float salary) {
+        this.salary = salary;
+    }
+
+ 
+
+    @Override
+    public String toString() {
+        return "Employee [name=" + name + ", age=" + age + ", salary=" + salary + "]";
+    }
+
+ 
+
+    @Override
+    public boolean equals(Object obj) {
+
+ 
+
+        Employee e1 = this;
+        Employee e2 = (Employee) obj;
+
+ 
+
+        return e1.getAge() == e2.getAge();
+    }
+
+ 
+
+    @Override
+    public Employee clone() throws CloneNotSupportedException {
+        return (Employee) super.clone();
+    }
+
+ 
+
+}
+----------------------------
+
+ 
+
+package p1;
+
+ 
+
+public class Test2 {
+
+ 
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+
+ 
+
+        Employee e1 = new Employee();
+        e1.setAge(35);
+        e1.setName("Shad");
+        e1.setSalary(1234);
+
+ 
+
+        // Duplicate/Clone of e1
+        Employee e2 = new Employee();
+        e2.setAge(e1.getAge());
+        e2.setName(e1.getName());
+        e2.setSalary(e1.getSalary());
+        
+        Employee e3 = e1.clone();
+        
+        System.out.println(e1);
+        System.out.println(e3);
+
+ 
+
+    }
+
+ 
+
+}
+
+ 
+
+==================================================================================
+ public final native Class<?> getClass();
+ 
+ public static void main(String[] args) throws InstantiationException, IllegalAccessException {
+
+ 
+
+        Employee e1 = new Employee();
+
+ 
+
+        e1.setAge(35);
+        e1.setName("Shad");
+        e1.setSalary(1234);
+
+ 
+
+        Class clazz = e1.getClass();
+        Employee e4 = (Employee) clazz.newInstance();
+
+ 
+
+    }
+=======================================
+void finalize()
+--------------------
+===========================================================================
+Interface:
+-------------
+Interface is an user defined data type.  Interface support Multiple inheritance.
+
+ 
+
+interface I
+    {
+        public abstract void f1();
+                        void f2();
+                        
+        public static final    int i=10;
+                            int j =15;
+    }
+
+ 
+
+Class:
+----------
+class is an user defined data type. Class support Single inheritance
+
+ 
+
+
+abstract class A
+{
+
+ 
+
+    int i=10;
+ 
+ void m1(){}// Concreate  
+ abstract void m2(); //Abstract
+
+ 
+
+}
+
+ 
+
+------------------------------------------------------
+
+ 
+
+1) class extends class
+2) interface extends interface
+
+ 
+
+3) class implements interface
+4) interface extends class  -> Not possible
+
+ 
+
+*) interface always super type
+===================================================================================================
+											10/12/2021
+===================================================================================================
+Assignment:
+----------------
+New features relAted to interface in Java8:
+---------------------------------------------------
+1. Functional interface:
+-------------------------------
+-> An interface who have only one abstract method, called Functional interface.
+
+ 
+
+Example:
+---------
+java.lang.Runnable
+java.util.concurrent.Callable
+java.util.function.Function
+java.util.function.Predicate
+java.util.function.Consumer
+java.util.function.BiConsumer
+
+ 
+
+@FunctionalInterface
+public interface Flyable {
+
+ 
+
+    void fly();
+
+ 
+
+//    void foo();
+
+ 
+
+    default public void greet() {
+
+ 
+
+        System.out.println("Hello Functional programming");
+    }
+
+ 
+
+    static public void sayBye() {
+
+ 
+
+        System.out.println("Likal lo, Bahut tezi se....");
+    }
+
+ 
+
+}
+------------------------------------------------------------------
+Marker Interface: interface having empty body.
+------------------------------------------------
+java.lang.Clonable
+java.io.Serializable
+
+ 
+
+================================================================
+Packages in Java:
+------------------
+hospital
+    |- A.java, B.java
+    |-doctor
+        |- C.java, D.java
+        |-cardio
+            |- E.java
+        |-ent
+            |- F.java
+    |-patient
+        |- G.java, H.java
+        |- indoor
+            |-I.java
+    |-staff
+        |---
+        ----
+        ----
+----------------------------------------------------
+package hospital;
+puclic class A
+{}    
+-----------------------    
+package hospital.doctor.cardio;
+public class E
+{
+}
+--------------------------------------------------------
+1. compile time error | Syntax error
+2. Runtime errors | exceptions
+3. Logical errors
+
+ 
+
+------------------------------------------------------------------
+Exception Handling:
+-----------------------
+-> Exceptions are runtime errors.
+-> Exceptions are unwanted/Mishapping situations.
+-> In java exceptions are Objects derived from Throwable class.
+
+ 
+
+        try {
+            //risky code
+        } catch (Exception e) {
+            //action against exception raised in its try block. 
+        } finally {
+            //free the resources/cleanup code.
+        }
+
+ 
+
+=================================================================
+throws clause:
+--------------
+Exception can be divide into two category:
+------------------------------------------
+1. unchecked exception
+2. checked exception
+
+ 
+
+-------------------------------------------------------------------------
+throw:
+--------------
+Custom Exception:
+----------------------------
+
+ 
+
+public clsss MyException extends Exception
+{
+    MyException(String reason){
+        super(reason)
+    }
+}
+
+ 
+
+---------------------------------------------------------------
+byte -> Byte
+short -> Short
+int -> Integer
+long -> Long
+
+ 
+
+flaot -> Float
+double -> Double
+
+ 
+
+boolean -> Boolean
+char -> Character
+
+ 
+
+void -> Void
+
+ 
+
+------------------------------------
+1. To finid minimum and maximum ranges:
+------------------------------------------
+
+ 
+
+//System.out.println(int.MIN_VALUE); --> Compile time error    
+System.out.println(Integer.MIN_VALUE); -2147483648
+
+ 
+
+2. How to convert number into String:
+-------------------------------------------
+   int i =10;
+   
+    String s1 = i + "";
+    System.out.println(s1);
+        
+    String s2 = String.valueOf(15);
+    System.out.println(s2);
+
+ 
+
+3. Convert String into numric data type:
+---------------------------------------------
+    String s ="101";
+    
+    int x = s;
+  parseXXX(String)
+===================================================================================================
+salarycalcute prog:-
+------------------------
+------------------------
+package p3;
+
+ 
+
+public class CalculateSalary {
+
+ 
+
+    public static void main(String[] args) {
+
+ 
+
+        double totalSalary = calcSal(-100);
+
+ 
+
+        System.out.println(totalSalary);
+    }
+
+ 
+
+    private static double calcSal(int basic) {
+
+ 
+
+        // forgiveness
+//        if (basic <= 0) {
+//
+//            String msg = "Bhai Sahab, basic salary cannot be ZERO or NEGATIVE";
+//
+//            System.out.println(msg);
+//
+//            return 0;
+//        }
+
+ 
+
+        // Punishment
+        if (basic <= 0) {
+
+ 
+
+            String msg = "Sale, basic salary cannot be ZERO or NEGATIVE";
+            throw new MyException(msg);
+        }
+
+ 
+
+        double total = 2 * basic + 50;
+
+ 
+
+        return total;
+    }
+
+ 
+
+}
+---------------------------
+package p3;
+
+ 
+
+public class MyException extends RuntimeException {
+    
+    public MyException(String reason) {
+        super(reason);
+    }
+}
+===================================================================================================
+											14/12/2021
+===================================================================================================
+Assignment:-
+--------------
+1. Write a Java program to create a new array list, add some colors (string) and print out the collection. Go to the editor
+
+2. Write a Java program to iterate through all elements in a array list. Go to the editor
+
+3. Write a Java program to insert an element into the array list at the first position. Go to the editor
+
+4. Write a Java program to retrieve an element (at a specified index) from a given array list. Go to the editor
+
+5. Write a Java program to update specific array element by given element. Go to the editor
+
+6. Write a Java program to remove the third element from a array list. Go to the editor
+
+7. Write a Java program to search an element in a array list. Go to the editor
+
+8. Write a Java program to sort a given array list. Go to the editor
+
+9. Write a Java program to copy one array list into another. Go to the editor
+
+10. Write a Java program to shuffle elements in a array list. Go to the editor
+
+11. Write a Java program to reverse elements in a array list. Go to the editor
+
+12. Write a Java program to extract a portion of a array list. Go to the editor
+
+13. Write a Java program to compare two array lists. Go to the editor
+
+14. Write a Java program of swap two elements in an array list. Go to the editor
+
+15. Write a Java program to join two array lists. Go to the editor
+
+16. Write a Java program to clone an array list to another array list. Go to the editor
+
+17. Write a Java program to empty an array list. Go to the editor
+
+18. Write a Java program to test an array list is empty or not. Go to the editor
+
+19. Write a Java program to trim the capacity of an array list the current list size. Go to the editor
+
+20. Write a Java program to increase the size of an array list. Go to the editor
+
+21. Write a Java program to replace the second element of a ArrayList with the specified element. Go to the editor
+
+22. Write a Java program to print all the elements of a ArrayList using the position of the elements. Go to the editor
+
+===================================================================================================
+											15/12/2021
+===================================================================================================
+
+Java program to create a new file
+Java program to write content into file using FileOutputStream
+Java program to read content from file using FileInputStream
+Java program to write content into file using BufferedWriter
+Java program to read content from file using BufferedReader
+Java program to get file size and file path
+Java program to delete a file
+Java program to copy files
+Java program to get the last modification date and time of a file
+Java program to append text/string in a file
+Java program to determine number of bytes written to file using DataOutputStream
+Java program to read text from file from a specified index or skipping byte using FileInputStream
+Java program to check whether a file is hidden or not
+Java program to get the size of given file in bytes, kilobytes and megabytes
+Java program to create directory/folder in particular drive
+Java program to check whether a file can be read or not
+Java program to read and print all files from a zip file
+Java program to get the attributes of a file
+Java program to get the basic file attributes (specific to DOS)
+Java program to get the file's owner name
+Java program to get file creation, last access and last modification time
+Java program to read content from one file and write it into another file
+Java program to read a file line by line
+Java program to traverse all files of a directory/folder
+Java - Print File Content, Display File using Java Program
+Java - Copy Content of One File to Another File using Java Program
+Java program to rename an existing file
+
+===================================================================================================
