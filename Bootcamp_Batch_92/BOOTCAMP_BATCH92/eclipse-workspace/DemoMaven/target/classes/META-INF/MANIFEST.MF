@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Built-By: vasu_jain
-Build-Jdk: 11.0.13
-Class-Path: lib/mysql-connector-java-8.0.27.jar lib/protobuf-java-3.11.4
- .jar
-Main-Class: MavenDemo.MavenDemo
-Created-By: Maven Integration for Eclipse
-
