@@ -1,0 +1,1 @@
+INDEX VERSION 1.4+D:\THBS-Batch-92\Bootcamp_Batch_92\BOOTCAMP_BATCH92\eclipse-workspace\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
